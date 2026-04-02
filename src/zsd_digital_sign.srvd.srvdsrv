@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for digital sign'
+define service ZSD_DIGITAL_SIGN {
+  expose ZC_DIGITAL_SIGN;
+}

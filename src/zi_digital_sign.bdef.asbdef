@@ -1,0 +1,39 @@
+managed implementation in class zbp_i_digital_sign unique;
+strict ( 2 );
+
+define behavior for ZI_DIGITAL_SIGN  alias zi_digital_doc//alias <alias_name>
+//persistent table <???>
+persistent table zdb_digital_sign
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+create;
+  action ( features : instance ) zsign result [1] $self;
+  update;
+  field ( readonly ) BillingDocument;
+
+  mapping for zdb_digital_sign
+  {
+  BillingDocument = billingdocument;
+  base64 = base64;
+  currdate        = currdate;
+    m_ind           = m_ind;
+    lv_send_mail =  lv_send_mail;
+     Irn = irn;
+//    NetAmount =
+//      d.TransactionCurrency,
+      Customer =customer;
+      CustomerName = customername;
+      zsigninv1 = zsigninv1;
+      cust_mail = cust_mail;
+      cust_mailcc = cust_mailcc;
+      send_mail = send_mail;
+      sign_page = sign_page;
+     sign_cord  = sign_cord;
+
+
+
+  }
+}

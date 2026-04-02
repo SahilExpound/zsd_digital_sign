@@ -1,0 +1,9 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_DIGITAL_SIGN alias zi_digital_doc
+{
+  use update;
+
+  use action zsign;
+}
